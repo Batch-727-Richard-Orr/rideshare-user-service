@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public List<User> getUserByUsername(String username) {
-		return ur.getUserByUsername(username);
+		return ur.getUserByUserName(username);
 	}
 	
 	/**
@@ -72,7 +72,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public List<User> getUserByRole(boolean isDriver) {
-		return ur.getUserByRole(isDriver);
+		return ur.getUserByDriver(isDriver);
 	}
 	
 	/**
@@ -85,7 +85,7 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public List<User> getUserByRoleAndLocation(boolean isDriver, String location) {
-		return ur.getUserByRoleAndLocation(isDriver, location);
+		return ur.getUserByDriverAndLocation(isDriver, location);
 	}
 	
 	/**

@@ -26,8 +26,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	 * @return Check {@link com.revature.services.impl.UserServiceImpl}
 	 */
 	
-	@Query("select u from User u where u.isDriver = ?1")
-	public List<User> getUserByRole(boolean isDriver);
+	public List<User> getUserByDriver(boolean driver);
 	
 	/**
 	 * Custom query that uses the @Query annotation to select a user by username.
@@ -36,8 +35,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	 * @return Check {@link com.revature.services.impl.UserServiceImpl}
 	 */
 	
-	@Query("select u from User u where u.userName = ?1")
-	public List<User> getUserByUsername(String username);
+	public List<User> getUserByUserName(String username);
 	
 	/**
 	 * Custom query that uses the @Query annotation to select a user by isDriver and location.
@@ -47,10 +45,9 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	 * @return Check {@link com.revature.services.impl.UserServiceImpl}
 	 */
 	
-	@Query("select u from User u where u.isDriver = ?1 and u.batch.batchLocation = ?2")
-	public List<User> getUserByRoleAndLocation(boolean isDriver, String location);
+	public List<User> getUserByDriverAndBatch_BatchLocation(boolean driver, String location);
 	
-	@Query("select u from User u where u.isDriver = true and u.isActive = true and u.isAcceptingRides = true")
+	@Query("select u from User u where u.driver = true and u.active = true and u.acceptingRides = true")
 	public List<User> getActiveDrivers();
 	
 }

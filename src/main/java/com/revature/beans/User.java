@@ -64,11 +64,11 @@ public class User implements Serializable {
 	@Pattern(regexp="^\\(?([0-9]{3})\\)?[-.\\s]?([0-9]{3})[-.\\s]?([0-9]{4})$")
 	private String phoneNumber;
 	@Column(name="is_driver")
-	private boolean isDriver;
+	private boolean driver;
 	@Column(name="is_active")
-	private boolean isActive;
+	private boolean active;
 	@Column(name="is_accepting_rides")
-	private boolean isAcceptingRides;
+	private boolean acceptingRides;
 	@NotBlank
 	@Column(name = "h_address")
 	private String hAddress;
@@ -105,7 +105,7 @@ public class User implements Serializable {
 			@NotBlank @Size(max = 30) @Pattern(regexp = "^[a-zA-Z]+-?[a-zA-Z]+ ?[a-zA-Z]+-?[a-zA-Z]+$") String lastName,
 			@Email @Pattern(regexp = "^\\w+\\.?\\w+@\\w+\\.[a-zA-Z]{2,4}$") String email,
 			@NotBlank @Pattern(regexp = "^\\(?([0-9]{3})\\)?[-.\\s]?([0-9]{3})[-.\\s]?([0-9]{4})$") String phoneNumber,
-			boolean isDriver, boolean isActive, boolean isAcceptingRides) {
+			boolean driver, boolean isActive, boolean isAcceptingRides) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
@@ -114,9 +114,9 @@ public class User implements Serializable {
 		this.lastName = lastName;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
-		this.isDriver = isDriver;
-		this.isActive = isActive;
-		this.isAcceptingRides = isAcceptingRides;
+		this.driver = driver;
+		this.active = isActive;
+		this.acceptingRides = isAcceptingRides;
 	}
 
 	public User(@NotBlank @Size(min = 3, max = 12) @Pattern(regexp = "^\\w+\\.?\\w+$") String userName, Batch batch,
@@ -124,7 +124,7 @@ public class User implements Serializable {
 			@NotBlank @Size(max = 30) @Pattern(regexp = "^[a-zA-Z]+-?[a-zA-Z]+ ?[a-zA-Z]+-?[a-zA-Z]+$") String lastName,
 			@Email @Pattern(regexp = "^\\w+\\.?\\w+@\\w+\\.[a-zA-Z]{2,4}$") String email,
 			@NotBlank @Pattern(regexp = "^\\(?([0-9]{3})\\)?[-.\\s]?([0-9]{3})[-.\\s]?([0-9]{4})$") String phoneNumber,
-			boolean isDriver, boolean isActive, boolean isAcceptingRides) {
+			boolean driver, boolean isActive, boolean isAcceptingRides) {
 		super();
 		this.userName = userName;
 		this.batch = batch;
@@ -132,9 +132,9 @@ public class User implements Serializable {
 		this.lastName = lastName;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
-		this.isDriver = isDriver;
-		this.isActive = isActive;
-		this.isAcceptingRides = isAcceptingRides;
+		this.driver = driver;
+		this.active = isActive;
+		this.acceptingRides = isAcceptingRides;
 	}
 
 	public User(int userId, @NotBlank @Size(min = 3, max = 12) @Pattern(regexp = "^\\w+\\.?\\w+$") String userName,
@@ -173,7 +173,7 @@ public class User implements Serializable {
 		this.wState = wState;
 	}
 	public User(int userId, @NotBlank String userName, Batch batch, @NotBlank String firstName,
-			@NotBlank String lastName, @Email String email, @NotBlank String phoneNumber, boolean isDriver,
+			@NotBlank String lastName, @Email String email, @NotBlank String phoneNumber, boolean driver,
 			boolean isActive, boolean isAcceptingRides, String hAddress, String hCity, String hZip, String hState,
 			String wAddress, String wCity, String wZip, String wState) {
 		super();
@@ -184,9 +184,9 @@ public class User implements Serializable {
 		this.lastName = lastName;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
-		this.isDriver = isDriver;
-		this.isActive = isActive;
-		this.isAcceptingRides = isAcceptingRides;
+		this.driver = driver;
+		this.active = isActive;
+		this.acceptingRides = isAcceptingRides;
 		this.hAddress = hAddress;
 		this.hCity = hCity;
 		this.hZip = hZip;
@@ -239,22 +239,22 @@ public class User implements Serializable {
 		this.phoneNumber = phoneNumber;
 	}
 	public boolean isDriver() {
-		return isDriver;
+		return driver;
 	}
-	public void setDriver(boolean isDriver) {
-		this.isDriver = isDriver;
+	public void setDriver(boolean driver) {
+		this.driver = driver;
 	}
 	public boolean isActive() {
-		return isActive;
+		return active;
 	}
 	public void setActive(boolean isActive) {
-		this.isActive = isActive;
+		this.active = isActive;
 	}
 	public boolean isAcceptingRides() {
-		return isAcceptingRides;
+		return acceptingRides;
 	}
 	public void setAcceptingRides(boolean isAcceptingRides) {
-		this.isAcceptingRides = isAcceptingRides;
+		this.acceptingRides = isAcceptingRides;
 	}
 
 	public String gethAddress() {
@@ -348,9 +348,9 @@ public class User implements Serializable {
 		result = prime * result + ((hCity == null) ? 0 : hCity.hashCode());
 		result = prime * result + ((hState == null) ? 0 : hState.hashCode());
 		result = prime * result + ((hZip == null) ? 0 : hZip.hashCode());
-		result = prime * result + (isAcceptingRides ? 1231 : 1237);
-		result = prime * result + (isActive ? 1231 : 1237);
-		result = prime * result + (isDriver ? 1231 : 1237);
+		result = prime * result + (acceptingRides ? 1231 : 1237);
+		result = prime * result + (active ? 1231 : 1237);
+		result = prime * result + (driver ? 1231 : 1237);
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
 		result = prime * result + ((phoneNumber == null) ? 0 : phoneNumber.hashCode());
 		result = prime * result + userId;
@@ -386,11 +386,11 @@ public class User implements Serializable {
 		} else if (!firstName.equals(other.firstName))
 
 			return false;
-		if (isAcceptingRides != other.isAcceptingRides)
+		if (acceptingRides != other.acceptingRides)
 			return false;
-		if (isActive != other.isActive)
+		if (active != other.active)
 			return false;
-		if (isDriver != other.isDriver)
+		if (driver != other.driver)
 			return false;
 		if (lastName == null) {
 			if (other.lastName != null)
@@ -415,8 +415,8 @@ public class User implements Serializable {
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userName=" + userName + ", batch=" + batch + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", email=" + email + ", phoneNumber=" + phoneNumber + ", isDriver="
-				+ isDriver + ", isActive=" + isActive + ", isAcceptingRides=" + isAcceptingRides + ", hAddress="
+				+ ", lastName=" + lastName + ", email=" + email + ", phoneNumber=" + phoneNumber + ", driver="
+				+ driver + ", isActive=" + active + ", isAcceptingRides=" + acceptingRides + ", hAddress="
 				+ hAddress + ", hCity=" + hCity + ", hZip=" + hZip + ", hState=" + hState + ", wAddress=" + wAddress
 				+ ", wCity=" + wCity + ", wZip=" + wZip + ", wState=" + wState + "]";
 	}

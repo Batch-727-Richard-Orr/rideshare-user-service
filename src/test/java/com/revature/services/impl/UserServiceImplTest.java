@@ -51,7 +51,7 @@ public class UserServiceImplTest {
 		
 		List<User> expected = new ArrayList<>();
 		expected.add(new User(1, "userName", new Batch(), "adonis", "cabreja", "adonis@gmail.com", "123-456-789"));
-		when(ur.getUserByUsername("userName")).thenReturn(expected);
+		when(ur.getUserByUserName("userName")).thenReturn(expected);
 		List<User> actual = usi.getUserByUsername("userName");
 		
 		assertEquals(expected, actual);
@@ -62,7 +62,7 @@ public class UserServiceImplTest {
 		
 		List<User> expected = new ArrayList<>();
 		expected.add(new User(1, "userName", new Batch(), "adonis", "cabreja", "adonis@gmail.com", "123-456-789"));
-		when(ur.getUserByRole(true)).thenReturn(expected);
+		when(ur.getUserByDriver(true)).thenReturn(expected);
 		List<User> actual = usi.getUserByRole(true);
 		
 		assertEquals(expected, actual);
@@ -73,7 +73,7 @@ public class UserServiceImplTest {
 		
 		List<User> expected = new ArrayList<>();
 		expected.add(new User(1, "userName", new Batch(), "adonis", "cabreja", "adonis@gmail.com", "123-456-789"));
-		when(ur.getUserByRoleAndLocation(true, "location")).thenReturn(expected);
+		when(ur.getUserByDriverAndLocation(true, "location")).thenReturn(expected);
 		List<User> actual = usi.getUserByRoleAndLocation(true, "location");
 		
 		assertEquals(expected, actual);

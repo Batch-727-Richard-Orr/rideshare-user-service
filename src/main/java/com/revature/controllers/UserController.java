@@ -254,16 +254,16 @@ public class UserController {
 	}
 	
 	/**
-	 * HTTP PUT method (/users)
+	 * HTTP PUT method (/users/id)
 	 * 
 	 * @param user represents the updated User object being sent.
 	 * @return The newly updated object.
 	 */
 	
 	@ApiOperation(value="Updates user by id", tags= {"User"})
-	@PutMapping
-	public User updateUser(@Valid @RequestBody User user) {
-		//System.out.println(user);
+	@PutMapping("/{id}")
+	public User updateUser(@Valid @RequestBody User user, @PathVariable("id")int id) {
+		System.out.println(user);
 		return us.updateUser(user);
 	}
 	
