@@ -35,8 +35,15 @@ insert into users values
 (27, 'onassim.khaled.3r@korkorts-foto.se', 'Sobe', '966 Fulton St', 'Brooklyn', 'NY', '11238', true, true, true, 'Burd', '646-919-8956', 'sburd', '127 Dunning Plaza', 'Saint Louis', 'MO', '63131', 1),
 (28, '3jinny.park.3577@gorbapa.com', 'Jobe', '2-54 Lefferts Pl', 'Brooklyn', 'NY', '11238', true, true, true, 'Hurd', '646-919-8957', 'jhurd', '127 Dunning Plaza', 'Saint Louis', 'MO', '63131', 1),
 (29, 'dsidahmed.xbr@smellri.xyz', 'Dobe', '563-497 Waverly Ave', 'Brooklyn', 'NY', '11238', true, true, true, 'Durd', '646-919-8958', 'ddurd', '127 Dunning Plaza', 'Saint Louis', 'MO', '63131', 1),
-(30, 'udafjones13y@secretsaiyan.xyz', 'Qobe', '503 Vanderbilt Ave', 'Brooklyn', 'NY', '11238', true, true, true, 'Nurd', '646-919-8958', 'qnurd', '127 Dunning Plaza', 'Saint Louis', 'MO', '63131', 1);
-
+(30, 'udafjones13y@secretsaiyan.xyz', 'Qobe', '503 Vanderbilt Ave', 'Brooklyn', 'NY', '11238', true, true, true, 'Nurd', '646-919-8959', 'qnurd', '127 Dunning Plaza', 'Saint Louis', 'MO', '63131', 1),
+(31, 'jatman.oaliq@1000kti.xyz', 'Bobe', '464 Clinton Ave', 'Brooklyn', 'NY', '11238', true, true, true, 'Lurd', '646-919-8960', 'blurd', '127 Dunning Plaza', 'Saint Louis', 'MO', '63131', 1),
+(32, 'khgcjhvvd@mateplays.xyz', 'Zobe', '465 Clinton Ave', 'Brooklyn', 'NY', '11238', true, true, true, 'Zurd', '646-919-8961', 'zzurd', '127 Dunning Plaza', 'Saint Louis', 'MO', '63131', 1),
+(33, 'gmorad.fcbc@awex.icu', 'Andrew', '386 Patteson Drive', 'Morgantown', 'WV', '26505', true, true, true, 'Smith', '213-600-8431', 'asmith', '6 Bay Road', 'Columbia', 'MO', '65218', 1),
+(34, 'gjosias.silva.77@catalystwallet.info', 'Steven', '1014 Rawley Ave', 'Morgantown', 'WV', '26505', true, true, true, 'Park', '213-600-8432', 'spark', '6 Bay Road', 'Columbia', 'MO', '65218', 1),
+(35, 'ufel@obleceni-kenvelo.info', 'John', '2932 University Ave', 'Morgantown', 'WV', '26505', true, true, true, 'Bridges', '213-600-8433', 'jbridges', '6 Bay Road', 'Columbia', 'MO', '65218', 1),
+(36, 'xwallyn@obleceni-kenvelo.info', 'Kelly', '2872 University Ave', 'Morgantown', 'WV', '26505', true, true, true, 'Daniels', '213-600-8434', 'kdaniels', '6 Bay Road', 'Columbia', 'MO', '65218', 1),
+(37, 'kmouad@phuongblue1507.xyz', 'Nathan', '334 Patteson Drive', 'Morgantown', 'WV', '26505', true, true, true, 'Kim', '213-600-8435', 'nkim', '6 Bay Road', 'Columbia', 'MO', '65218', 1),
+(38, 'dbrunoroyaq@sarkaeeresult.info', 'Michael', '3119 University Ave', 'Morgantown', 'WV', '26505', true, true, true, 'Benson', '213-600-8436', 'mbenson', '6 Bay Road', 'Columbia', 'MO', '65218', 1);
 
 
 
