@@ -326,6 +326,7 @@ public class UserController {
 	@ApiOperation(value="Updates user by id", tags= {"User"})
 	@PutMapping("/{id}")
 	public Map<String, Set<String>> updateUser(@Valid @RequestBody User user, BindingResult result) {
+		System.out.println("are we even getting here");
 		
 		 Map<String, Set<String>> errors = new HashMap<>();
 		 
@@ -385,7 +386,7 @@ public class UserController {
 		    }
 
 			if (errors.isEmpty()) {
-
+				System.out.println(user);
 				us.updateUser(user);
 		 		
 
