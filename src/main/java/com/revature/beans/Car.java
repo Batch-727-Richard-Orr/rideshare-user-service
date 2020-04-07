@@ -10,11 +10,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Range;
 import org.springframework.stereotype.Component;
 
 /**
@@ -39,20 +43,23 @@ public class Car implements Serializable {
 	
 	private String color;
 	
-	@Positive
+	@Positive(message = "Must have 1 or more seats")
 	private int seats;
 	
-	@NotBlank
-	@Size(min=3,max=15)
-	@Pattern(regexp="^[A-Za-z\\\\\\s-]+$")
+	@NotBlank(message = "Make field required")
+	@Size(min=3,max=15, message = "Make must be between {min} and {max} characters"
+                + " in length")
+	@Pattern(regexp="^[A-Za-z\\\\\\s-]+$", message = "Make contains illegal characters")
 	private String make;
 	
-	@NotBlank
-	@Size(max=25)
-	@Pattern(regexp="^[0-9A-Za-z\\s\\-]+$")
+	@NotBlank(message = "Model field required")
+	@Size(max=25, message = "Model must be less than {max} characters long")
+	@Pattern(regexp="^[0-9A-Za-z\\s\\-]+$", message = "Model contains illegal characters")
 	private String model;
 	
 	@Positive
+	@Min(value = 1000, message = "Year must be a 4 digit number.")
+	@Max(value = 9999, message = "Year must be a 4 digit number.")
 	@Column(name="car_year")
 	private int year;
 	
